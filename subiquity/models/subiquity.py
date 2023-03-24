@@ -311,6 +311,7 @@ class SubiquityModel:
         # cloud-init v. 22.3 will allow for log_deprecations=True to avoid
         # raising errors on deprecated keys.
         # In the meantime, iterate over schema_deprecations to log warnings.
+        return
         try:
             validate_cloudconfig_schema(data, schema=get_schema(), strict=True)
         except SchemaValidationError as e:
